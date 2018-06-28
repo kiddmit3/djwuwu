@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {
   Route,
   NavLink,
-  HashRouter
+  BrowserRouter 
 } from "react-router-dom";
 import Home from "./Components/Home";
 import About from "./Components/About";
@@ -12,6 +12,7 @@ import Contact from "./Components/Contact";
 import Image from "./img/IMG_0800.jpg";
 import Dav from "./img/dav.png";
 import brandlogo from "./img/wuwu-sm.png";
+import ScrollToTop from 'react-router-scroll-top';
 
  
 class Main extends Component {
@@ -24,6 +25,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
+
     document.addEventListener('scroll', () => {
       const isTop = window.scrollY < 100;
       if (isTop !== this.state.isTop) {
@@ -33,6 +35,7 @@ class Main extends Component {
   }
 
     componentWillMount(){
+
       this.setState({gigs:[
       {
         image_url: 'https://picsum.photos/500/500/?random',
@@ -83,13 +86,14 @@ class Main extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
+      <ScrollToTop>
       <div>
         <div className="sticky-top">
         <div className={this.state.isTop ? 'padding-right' : 'bg-rose'}> 
         <nav className="container navbar navbar-default navbar-expand navbar-light p-0 mt-0">
           <div className="navbar-header fadeInDown">
-            <a className="navbar-brand text-white grow-sm pl-4 pr-0 mr-0" href=""><img className="mr-2" alt="logo" src={brandlogo}/>
+            <a className="navbar-brand text-white grow-sm pl-4 pr-0 mr-0" href=""><img className="mr-2 img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
             <span className="ml-2" id="wuwu-text">dj<b>WUWU</b></span></a>     
           </div>
           <ul className="header ml-auto pt-0 mb-0">
@@ -146,14 +150,9 @@ class Main extends Component {
 
 </div>
         </div>
-
-      </HashRouter>
+</ScrollToTop>
+      </BrowserRouter >
     );
   }
 }
  
-export default Main;
-
-        // <div className="footer">
-        // <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fdjdouble55%2F" frameborder="0" ></iframe>
-        // </div>

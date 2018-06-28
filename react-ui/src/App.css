@@ -16,7 +16,7 @@ body {
     width: 40px;
     position: fixed;
     right:0;
-    top: 35vh;
+    top: 20vh;
     margin: 0 auto;
     z-index:3;
     text-align: center;
@@ -54,6 +54,13 @@ ul.header li a {
 }
 .bg-rose {
     background-color: rgba(230, 85, 120, 0.4);
+    position: relative;
+    bottom: 3px;
+
+}
+
+.brandlogo {
+    height: 40px;
 }
 
 .grow {
