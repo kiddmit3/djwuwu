@@ -97,24 +97,24 @@ class Main extends Component {
             <span className="ml-2" id="wuwu-text">dj<b>WUWU</b></span></a>     
           </div>
           <ul className="header ml-auto pt-0 mb-0">
-            <li><NavLink className="grow-sm" exact to="/">HOME</NavLink></li>
-            <li><NavLink className="grow-sm" to="/about">ABOUT</NavLink></li>
-            <li><NavLink className="grow-sm" to="/music">MUSIC</NavLink></li>
-            <li><NavLink className="grow-sm" to="/photos">PHOTOS</NavLink></li>
-            <li><NavLink className="grow-sm" to="/contact">CONTACT</NavLink></li>
+            <li><NavLink className="grow-sm" exact to="/"><span className="nav-text">HOME</span><i className="fas fa-home nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm" to="/about"><span className="nav-text">ABOUT</span><i className="fas fa-info-circle nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm" to="/music"><span className="nav-text">MUSIC</span><i className="fas fa-music nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm" to="/photos"><span className="nav-text">PHOTOS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm" to="/contact"><span className="nav-text">CONTACT</span><i className="fas fa-question-circle nav-icon fa-lg"></i></NavLink></li>
           </ul>
         </nav>
         </div>
       </div>
 
-        <div className="container">
+        <div className="container pr-0">
         <div className="social-sidebar bg-white pr-1">
             <ul className="navbar-nav">
-              <li className=""><a href="https://www.facebook.com/niyunwu" className="nav-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
-              <li className=""><a href="https://www.instagram.com/niyun_wu/" className="nav-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
-              <li className=""><a href="https://soundcloud.com/djwuwu" className="nav-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-soundcloud"></i></a></li>
-              <li className=""><a href="https://www.mixcloud.com/djwuwu/" className="nav-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-mixcloud"></i></a></li>
-              <li className=""><a href="mailto:info@djwuwu.com" className="nav-link"><i className="far fa-envelope"></i></a></li>
+              <li className=""><a href="https://www.facebook.com/niyunwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
+              <li className=""><a href="https://www.instagram.com/niyun_wu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
+              <li className=""><a href="https://soundcloud.com/djwuwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-soundcloud"></i></a></li>
+              <li className=""><a href="https://www.mixcloud.com/djwuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-mixcloud"></i></a></li>
+              <li className=""><a href="mailto:info@djwuwu.com" className="nav-link grow"><i className="far fa-envelope"></i></a></li>
             </ul>
           </div>
 
@@ -128,7 +128,7 @@ class Main extends Component {
               <Route path="/contact" render={()=><Contact />}/>
             </div>
       
-            <div className="col-md-4">
+            <div className="col-md-4 marginr">
             <div className="fadeInUp" id="mixcloudprof">
             <img className="img-fluid mx-auto d-block fadeInUp" alt="profile with blue background" src={Image}/>
             <iframe className="fadeInUp" width="100%" height="90" src="https://www.mixcloud.com/widget/follow/?u=%2Fdjwuwu%2F" frameBorder="0" title="Mixcloud Account"></iframe>
