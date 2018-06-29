@@ -12,6 +12,16 @@ body {
     column-count: 2;
 }
 
+.no-scroll-box {
+    max-height: 90vh;
+    overflow: auto;
+
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .social-sidebar {
     width: 40px;
     position: fixed;

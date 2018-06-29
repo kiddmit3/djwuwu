@@ -108,7 +108,6 @@ class Main extends Component {
       </div>
 
         <div className="container">
-
         <div className="social-sidebar bg-white pr-1">
             <ul className="navbar-nav">
               <li className=""><a href="https://www.facebook.com/niyunwu" className="nav-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
@@ -121,7 +120,7 @@ class Main extends Component {
 
           <div className="content">
             <div className="row">
-            <div className="col-md-8 pr-lg-4">
+            <div className="col-md-8 pr-lg-4 no-scroll-box mb-3">
               <Route exact path="/" render={()=><Home gigs={this.state.gigs}/>}/>
               <Route path="/about" render={()=><About />}/>
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
