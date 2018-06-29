@@ -1,4 +1,4 @@
-body {
+/*body {
     margin: 0;
     background: url('./img/max-ostrozhinskiy-218836-unsplash.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -7,6 +7,22 @@ body {
     background-size: cover;
     min-height: 100vh;
     position: relative;
+}*/
+
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  background: url(./img/max-ostrozhinskiy-218836-unsplash.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .card-columns {
@@ -132,7 +148,7 @@ ul.header li a {
 
 .snapwidget-widget {
     width: 100%;
-    height: 380px;
+    height: 360px;
     border: 0;
     overflow: hidden;
     /*  position: relative;
@@ -293,7 +309,6 @@ ul.header li a {
 }
 
 @media (max-width: 576px) {
-
     .content {
         padding-left: 0px;
         padding-right: 35px;
