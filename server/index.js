@@ -69,7 +69,7 @@ if (cluster.isMaster) {
   })
 
   app.get('/api/gigs', function(req,res){
-    Gig.find({}, null, {sort:'date'}, function(err, gigs){
+    Gig.find({}, null, {sort:'-date'}, function(err, gigs){
       console.log("connected!");
       res.send(gigs)
     })
