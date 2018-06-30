@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Gigs from "./Gigs";
 import PropTypes from 'prop-types';
+import $ from 'jquery';
+
  
 class Home extends Component {
 constructor() {
@@ -10,26 +12,46 @@ constructor() {
     }
 }
 
-componentWillMount() {
-    this.setState({ gigs: this.props.gigs })
+getGigs(){
+  $.ajax({
+    url: '/api/gigs',
+    dataType:'json',
+    cache: false,
+    success: function(data){
+      this.setState({gigs:data}, function(){
+        console.log(this.state)
+      });
+    }.bind(this),
+    error: function(xhr, status, err){
+      console.log(err);
+    }
+  })
 }
 
-deleteGig(_id) {
-    this.props.onDelete(_id);
+handleAddGig(gig){
+    let gigs = this.state.gigs;
+    gigs.push(gig);
+    this.setState({gigs:gigs})
+  }
+handleDeleteGig(_id){
+    let gigs = this.state.gigs;
+    let index = gigs.findIndex(x=> x._id === _id);
+    gigs.splice(index,1);
+    this.setState({gigs:gigs})
+  }
+
+
+componentWillMount() {
+    this.getGigs();
 }
 
   render() {
     return (
       <div className="">
-        <Gigs onDelete={this.deleteGig.bind(this)} gigs={this.state.gigs} />
+        <Gigs gigs={this.state.gigs} onDelete={this.handleDeleteGig.bind(this)}/>
       </div>
     );
   }
 }
 
-Home.propTypes = {
-  gigs: PropTypes.array.isRequired,
-  onDelete: PropTypes.func.isRequired
-}
- 
 export default Home;

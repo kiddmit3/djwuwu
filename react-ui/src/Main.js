@@ -14,62 +14,46 @@ import Image from "./img/IMG_0800.jpg";
 import Dav from "./img/dav.png";
 import brandlogo from "./img/wuwu-sm.png";
 import ScrollToTop from 'react-router-scroll-top';
-import uuid from "uuid";
-import $ from 'jquery';
+// import uuid from "uuid";
 
 class Main extends Component {
   constructor(){
     super();
     this.state = {
       gigs: [],
-      dynamicGigs: [],
       isTop: true
     }
   }
-  getGigs(){
-    $.ajax({
-      url: 'djwuwu.com/api/gigs',
-      dataType:'json',
-      cache: false,
-      success: function(data){
-        this.setState({gigs:data}, function(){
-          console.log(this.state.dynamicGigs)
-        });
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-      }
-    })
-  }
 
-  getGigsSeed(){
-    this.setState({gigs:[
-      {
-        _id: uuid.v4(),
-        image_url: 'https://picsum.photos/500/500/?random',
-        title:'Monkey Bar',
-        date:'07/01/2018',
-        link:'https://www.instagram.com',
-        time:'07:00PM'
-      },
-      {
-        _id: uuid.v4(),
-        image_url: 'https://picsum.photos/600/300/?random',
-        title:'Tokyo Beat',
-        date:'07/01/2018',
-        link:'https://www.instagram.com',
-        time:'07:00PM'
-      },
-      {
-        _id: uuid.v4(),
-        image_url: 'https://picsum.photos/700/700/?random',
-        title:'626 Night Market',
-        date:'07/01/2018',
-        link:'https://www.instagram.com',
-        time:'07:00PM'
-      }
-      ]})
-  }
+
+  // getGigsSeed(){
+  //   this.setState({gigs:[
+  //     {
+  //       _id: uuid.v4(),
+  //       image_url: 'https://picsum.photos/500/500/?random',
+  //       title:'Monkey Bar',
+  //       date:'07/01/2018',
+  //       link:'https://www.instagram.com',
+  //       time:'07:00PM'
+  //     },
+  //     {
+  //       _id: uuid.v4(),
+  //       image_url: 'https://picsum.photos/600/300/?random',
+  //       title:'Tokyo Beat',
+  //       date:'07/01/2018',
+  //       link:'https://www.instagram.com',
+  //       time:'07:00PM'
+  //     },
+  //     {
+  //       _id: uuid.v4(),
+  //       image_url: 'https://picsum.photos/700/700/?random',
+  //       title:'626 Night Market',
+  //       date:'07/01/2018',
+  //       link:'https://www.instagram.com',
+  //       time:'07:00PM'
+  //     }
+  //     ]})
+  // }
 
   componentDidMount() {
     document.addEventListener('scroll', () => {
@@ -78,13 +62,14 @@ class Main extends Component {
           this.setState({ isTop });
       }
     });
-    this.getGigs();
+    // this.getGigs();
     // this.getGigsSeed();
 
   }
 
-    componentWillMount(){
-      this.getGigs();
+
+  componentWillMount(){
+      // this.getGigs();
       // this.getGigsSeed();
     }
   
@@ -136,9 +121,9 @@ class Main extends Component {
 
           <div className="content">
             <div className="row">
-            <div className="col-md-8 pr-lg-4 no-scroll-box mb-3">
-            <AddGig addGig={this.handleAddGig.bind(this)}/>
-              <Route exact path="/" render={()=><Home gigs={this.state.gigs} onDelete={this.handleDeleteGig.bind(this)}/>}/>
+             <div className="col-md-8 pr-lg-4 no-scroll-box mb-3"> 
+              
+              <Route exact path="/" render={()=><Home/>}/>
               <Route path="/about" render={()=><About />}/>
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
               <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/>
@@ -158,6 +143,7 @@ class Main extends Component {
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>
                 <div className="text-white" id="davidplug">Developed by David Lac <br/>© 2018</div>
             </div>
+            <AddGig addGig={this.handleAddGig.bind(this)}/>
             </div>
 
           </div>

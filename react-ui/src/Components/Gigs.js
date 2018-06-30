@@ -23,7 +23,7 @@ class Gigs extends Component {
   	}
   	
     return (
-      <div>
+      <div key="hi">
       	{gigItems}
       </div>
     );

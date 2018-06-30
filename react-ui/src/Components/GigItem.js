@@ -7,19 +7,25 @@ class Gigitem extends Component {
   }
   render() {
     return (
-      <div className="fadeInUp">
-       <a href='#' onClick={this.deleteGig.bind(this, this.props.gig._id)}>X</a>
+
+      <div className="fadeInUp position-relative">
+       
+       <div className="position-relative">
        <a href={this.props.gig.link} target="_blank" rel="noopener noreferrer">
-       <img className="img-fluid mx-auto d-block w-100 grow-xs" src={this.props.gig.image_url} alt="logo"/>
-       <h6 className="text-white float-right mb-3 mt-1">{this.props.gig.title} | {this.props.gig.date} {this.props.gig.time}  </h6>
-       </a>
+       <img className="img-fluid mx-auto d-block w-100 grow-xs" src={this.props.gig.image_url} alt="logo"/></a>
+       <a href='#' style={{position: 'absolute', top: '5px',right:'10px'}} onClick={this.deleteGig.bind(this, this.props.gig._id)} className="text-white grow"><i class="far fa-minus-square"></i></a>
+       <h6 className="text-white mb-3 mt-1">{this.props.gig.title} | {this.props.gig.date} {this.props.gig.time}</h6>
+       </div>
+       
+       
       </div>
+
     );
   }
 }
 
 Gigitem.propTypes = {
-  gigs: PropTypes.object.isRequired,
+  gig: PropTypes.object.isRequired,
   onDelete: PropTypes.func.isRequired
 }
  

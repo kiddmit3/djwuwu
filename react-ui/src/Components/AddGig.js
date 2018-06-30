@@ -26,7 +26,7 @@ constructor(){
 
   render() {
     return (
-      <div>
+      <div className="d-none">
       	<h3> Add Gig </h3>
         <form className="m-3" onSubmit={this.handleSubmit.bind(this)}>
         <div>
