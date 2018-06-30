@@ -9,35 +9,43 @@ import About from "./Components/About";
 import Music from "./Components/Music";
 import Photos from "./Components/Photos";
 import Contact from "./Components/Contact";
+import AddGig from "./Components/AddGig";
 import Image from "./img/IMG_0800.jpg";
 import Dav from "./img/dav.png";
 import brandlogo from "./img/wuwu-sm.png";
 import ScrollToTop from 'react-router-scroll-top';
+import uuid from "uuid";
+import $ from 'jquery';
 
- 
 class Main extends Component {
   constructor(){
     super();
     this.state = {
       gigs: [],
+      dynamicGigs: [],
       isTop: true
     }
   }
-
-  componentDidMount() {
-
-    document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 100;
-      if (isTop !== this.state.isTop) {
-          this.setState({ isTop });
+  getGigs(){
+    $.ajax({
+      url: 'djwuwu.com/api/gigs',
+      dataType:'json',
+      cache: false,
+      success: function(data){
+        this.setState({gigs:data}, function(){
+          console.log(this.state.dynamicGigs)
+        });
+      }.bind(this),
+      error: function(xhr, status, err){
+        console.log(err);
       }
-    });
+    })
   }
 
-    componentWillMount(){
-
-      this.setState({gigs:[
+  getGigsSeed(){
+    this.setState({gigs:[
       {
+        _id: uuid.v4(),
         image_url: 'https://picsum.photos/500/500/?random',
         title:'Monkey Bar',
         date:'07/01/2018',
@@ -45,6 +53,7 @@ class Main extends Component {
         time:'07:00PM'
       },
       {
+        _id: uuid.v4(),
         image_url: 'https://picsum.photos/600/300/?random',
         title:'Tokyo Beat',
         date:'07/01/2018',
@@ -52,37 +61,44 @@ class Main extends Component {
         time:'07:00PM'
       },
       {
+        _id: uuid.v4(),
         image_url: 'https://picsum.photos/700/700/?random',
         title:'626 Night Market',
         date:'07/01/2018',
         link:'https://www.instagram.com',
         time:'07:00PM'
-      },
-      {
-        image_url: 'https://picsum.photos/300/500/?random',
-        title:'Monkey Bar1',
-        date:'07/01/2018',
-        link:'https://www.instagram.com',
-        time:'07:00PM'
-      },
-      {
-        image_url: 'https://picsum.photos/600/400/?random',
-        title:'Tokyo Beat1',
-        date:'07/01/2018',
-        link:'https://www.instagram.com',
-        time:'07:00PM'
-      },
-      {
-        image_url: 'https://picsum.photos/800/700/?random',
-        title:'626 Night Market',
-        date:'07/01/20181',
-        link:'https://www.instagram.com',
-        time:'07:00PM'
       }
       ]})
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100;
+      if (isTop !== this.state.isTop) {
+          this.setState({ isTop });
+      }
+    });
+    this.getGigs();
+    // this.getGigsSeed();
+
+  }
+
+    componentWillMount(){
+      this.getGigs();
+      // this.getGigsSeed();
     }
   
-
+  handleAddGig(gig){
+    let gigs = this.state.gigs;
+    gigs.push(gig);
+    this.setState({gigs:gigs})
+  }
+  handleDeleteGig(_id){
+    let gigs = this.state.gigs;
+    let index = gigs.findIndex(x=> x._id === _id);
+    gigs.splice(index,1);
+    this.setState({gigs:gigs})
+  }
 
   render() {
     return (
@@ -93,7 +109,7 @@ class Main extends Component {
         <div className={this.state.isTop ? 'padding-right' : 'bg-rose'}> 
         <nav className="container navbar navbar-default navbar-expand navbar-light p-0 mt-0">
           <div className="navbar-header fadeInDown">
-            <a className="navbar-brand text-white grow-sm pl-4 pr-0 mr-0" href=""><img className="mr-2 img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
+            <a className="navbar-brand text-white grow-sm pl-4 pr-0 mr-0" href=""><img className="mr-1 img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
             <span className="ml-2" id="wuwu-text">dj<b>WUWU</b></span></a>     
           </div>
           <ul className="header ml-auto pt-0 mb-0">
@@ -121,7 +137,8 @@ class Main extends Component {
           <div className="content">
             <div className="row">
             <div className="col-md-8 pr-lg-4 no-scroll-box mb-3">
-              <Route exact path="/" render={()=><Home gigs={this.state.gigs}/>}/>
+            <AddGig addGig={this.handleAddGig.bind(this)}/>
+              <Route exact path="/" render={()=><Home gigs={this.state.gigs} onDelete={this.handleDeleteGig.bind(this)}/>}/>
               <Route path="/about" render={()=><About />}/>
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
               <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/>
@@ -135,7 +152,7 @@ class Main extends Component {
             <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fdjwuwu%2F" frameBorder="0" id="mplayer" title="Mixcloud Player"></iframe>
             </div>
 
-            <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3 fadeInUp" allowTransparency="true" frameBorder="0" scrolling="no"></iframe>
+            <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3 fadeInUp" frameBorder="0" scrolling="no" title="Insta"></iframe>
 
             <div className="footer row mb-2 float-right mr-1">
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>

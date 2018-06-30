@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import GigItem from "./GigItem";
+import PropTypes from 'prop-types';
  
 class Gigs extends Component {
+
+  deleteGig(_id){
+    this.props.onDelete(_id);
+  }
 
   render() {
   	let gigItems;
@@ -10,7 +15,7 @@ class Gigs extends Component {
   			return (
   				<div>
   				
-  				<GigItem key={gig.title} gig={gig} />
+  				<GigItem onDelete={this.deleteGig.bind(this)} key={gig._id} gig={gig} />
   				
   				</div>
   			); 			
@@ -23,6 +28,11 @@ class Gigs extends Component {
       </div>
     );
   }
+}
+
+Gigs.propTypes = {
+  gigs: PropTypes.array.isRequired,
+  onDelete: PropTypes.func.isRequired
 }
  
 export default Gigs;
