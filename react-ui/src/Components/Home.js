@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Gigs from "./Gigs";
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+import AddGig from "./AddGig";
 
  
 class Home extends Component {
@@ -49,6 +50,7 @@ componentWillMount() {
     return (
       <div className="">
         <Gigs gigs={this.state.gigs} onDelete={this.handleDeleteGig.bind(this)}/>
+        <AddGig addGig={this.handleAddGig.bind(this)}/>
       </div>
     );
   }

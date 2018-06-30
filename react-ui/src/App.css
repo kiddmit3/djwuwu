@@ -79,7 +79,7 @@ ul.header li a {
     color: #FFF;
     font-weight: bold;
     text-decoration: none;
-    padding: 18.88px;
+    padding: 19px;
     display: inline-block;
 }
 
@@ -240,8 +240,8 @@ ul.header li a {
 }
 
 #davidplug {
-    font-size: .8em;
-    line-height: 20px;
+    font-size: .7em;
+    line-height: 14px;
     margin-left: 5px;
 }
 

@@ -9,7 +9,7 @@ import About from "./Components/About";
 import Music from "./Components/Music";
 import Photos from "./Components/Photos";
 import Contact from "./Components/Contact";
-import AddGig from "./Components/AddGig";
+import Edit from "./Components/Edit";
 import Image from "./img/IMG_0800.jpg";
 import Dav from "./img/dav.png";
 import brandlogo from "./img/wuwu-sm.png";
@@ -20,7 +20,6 @@ class Main extends Component {
   constructor(){
     super();
     this.state = {
-      gigs: [],
       isTop: true
     }
   }
@@ -73,17 +72,6 @@ class Main extends Component {
       // this.getGigsSeed();
     }
   
-  handleAddGig(gig){
-    let gigs = this.state.gigs;
-    gigs.push(gig);
-    this.setState({gigs:gigs})
-  }
-  handleDeleteGig(_id){
-    let gigs = this.state.gigs;
-    let index = gigs.findIndex(x=> x._id === _id);
-    gigs.splice(index,1);
-    this.setState({gigs:gigs})
-  }
 
   render() {
     return (
@@ -128,6 +116,7 @@ class Main extends Component {
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
               <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/>
               <Route path="/contact" render={()=><Contact />}/>
+              <Route path="/edit" render={()=><Edit />}/>
             </div>
       
             <div className="col-md-4 marginr">
@@ -141,9 +130,9 @@ class Main extends Component {
 
             <div className="footer row mb-2 float-right mr-1">
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>
-                <div className="text-white" id="davidplug">Developed by David Lac <br/>© 2018</div>
+                <div className="text-white" id="davidplug">All rights reserved. <br/>© 2018</div>
             </div>
-            <AddGig addGig={this.handleAddGig.bind(this)}/>
+            
             </div>
 
           </div>
