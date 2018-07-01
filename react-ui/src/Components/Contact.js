@@ -4,7 +4,7 @@ import Image from "../img/owen-cl-123303-unsplash.jpg";
 class Contact extends Component {
   render() {
     return (
-      <div className="bg-white p-4 mb-3 fadeInUp">
+      <div className="card p-4 mb-3 fadeInUp">
       <img className="img-fluid mx-auto d-block" src={Image} alt="Los Angeles"/>
       <div className="text-right"><em>Based in Los Angeles, CA </em></div>
         <form className="card p-3 mt-3">

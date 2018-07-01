@@ -7,9 +7,13 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const mongoose = require("mongoose");
 const Gig = require('../models/gig');
-const bodyParser = require("body-parser");
-const seedDB = require("./seeds");
+
+// const seedDB = require("./seeds");
+const nodemailer = require('nodemailer');
+
 const app = express();
+const bodyParser = require("body-parser");
+
 
 const url = 'mongodb://heroku_j1r4jm1n:vmm5077h3eluqp686hrfg2d9qf@ds121311.mlab.com:21311/heroku_j1r4jm1n';
 mongoose.connect(url, function (err, db) {

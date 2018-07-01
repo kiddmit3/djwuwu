@@ -4,7 +4,7 @@ import Image from "../img/geert-pieters-684286-unsplash.jpg";
 class About extends Component {
   render() {
     return (
-      <div className="bg-white p-4 mb-3 fadeInUp">
+      <div className="card bg-white p-4 mb-3 fadeInUp">
 
         <img className="img-fluid mx-auto d-block mb-3" src={Image} alt="disc jockey"/>
         <h2 className="mb-3">Esther Wu</h2>

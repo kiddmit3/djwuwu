@@ -63,7 +63,7 @@ class Photos extends Component {
 
   render() {
     return (
-      <div className="bg-white p-4 mb-3 fadeInUp">
+      <div className="card bg-white p-4 mb-3 fadeInUp">
         <Gallery photos={lightboxImages} onClick={this.openLightbox} />
         <Lightbox images={lightboxImages}
           onClose={this.closeLightbox}
