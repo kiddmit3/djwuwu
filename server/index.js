@@ -12,7 +12,9 @@ const Gig = require('../models/gig');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 const url = 'mongodb://heroku_j1r4jm1n:vmm5077h3eluqp686hrfg2d9qf@ds121311.mlab.com:21311/heroku_j1r4jm1n';
@@ -57,7 +59,7 @@ if (cluster.isMaster) {
       link: req.body.link,
       time: req.body.time
     }).then(gigs => {
-      res.json(gigs)
+      res.redirect('back');
     });
   });
 

@@ -33,11 +33,23 @@ handleAddGig(gig){
     this.setState({gigs:gigs})
   }
 handleDeleteGig(_id){
-    let gigs = this.state.gigs;
-    let index = gigs.findIndex(x=> x._id === _id);
-    gigs.splice(index,1);
-    this.setState({gigs:gigs})
+    $.ajax({
+    url: '/api/gigs/'+ _id,
+    method: 'DELETE',
+    dataType:'json',
+    cache: false,
+    success: function(data){
+        let gigs = this.state.gigs;
+        let index = gigs.findIndex(x=> x._id === _id);
+        gigs.splice(index,1);
+        this.setState({gigs:gigs}); 
+    }.bind(this),
+    error: function(xhr, status, err){
+      console.log(err);
+    }
+  })
   }
+
 
 
 componentWillMount() {
@@ -52,41 +64,31 @@ componentWillMount() {
         <h5 className="card-title">Add New Post</h5>
         <form action="/api/gigs" method="POST">
           <div className="form-group">
-            <label for="title">Title</label>
-            <input type="text" className="form-control" name="title" placeholder="Enter Title"/>
+            <label>Title</label>
+            <input type="text" className="form-control" name="title" placeholder="Enter Title" required/>
           </div>
           <div className="row">
           <div className="form-group col-6">
-            <label for="date">Date</label>
-            <input type="date" className="form-control" name="date"/>
+            <label>Date</label>
+            <input type="date" className="form-control" name="date" required/>
           </div>
           <div className="form-group col-6">
-            <label for="time">Time</label>
-            <input type="time" className="form-control" name="time"/>
+            <label>Time</label>
+            <input type="time" className="form-control" name="time" value="21:00" required/>
           </div>
           </div>
           <div className="form-group">
-            <label for="link">Link URL</label>
-            <input type="text" className="form-control" name="link" placeholder="Enter URL to Event"/>
+            <label>Link URL</label>
+            <input type="text" className="form-control" name="link" placeholder="Enter URL to Event" required/>
           </div>
           <div className="form-group">
-            <label for="title">Image Upload</label>
-            <input type="text" className="form-control" name="image_url" placeholder="Enter image url"/>
+            <label>Image Upload</label>
+            <input type="text" className="form-control" name="image_url" placeholder="Enter image url" required/>
           </div>
           <button type="submit" className="btn btn-primary float-right">Create</button>
         </form>
       </div>
 
-      <div className="card p-4 mb-3">
-        <h5 className="card-title">Delete Post</h5>
-        <form action="/api/gigs" method="POST">
-          <div className="form-group">
-            <label for="title">Post ID</label>
-            <input type="text" className="form-control" name="title" placeholder="Enter Post ID"/>
-          </div>
-          <button type="submit" className="btn btn-primary float-right">Delete</button>
-        </form>
-      </div>
         <Gigs gigs={this.state.gigs} onDelete={this.handleDeleteGig.bind(this)}/>
       </div>
     );
