@@ -5,14 +5,12 @@ import {
   BrowserRouter 
 } from "react-router-dom";
 import Home from "./Components/Home";
-import About from "./Components/About";
 import Music from "./Components/Music";
 import Photos from "./Components/Photos";
 import Contact from "./Components/Contact";
 import Edit from "./Components/Edit";
-import Image from "./img/IMG_0800.jpg";
 import Dav from "./img/dav.png";
-import brandlogo from "./img/wuwu-sm.png";
+import brandlogo from "./img/djwuwu.png";
 import ScrollToTop from 'react-router-scroll-top';
 // import uuid from "uuid";
 
@@ -79,17 +77,16 @@ class Main extends Component {
       <ScrollToTop>
       <div>
         <div className="sticky-top">
-        <div className={this.state.isTop ? 'padding-right' : 'bg-rose'}> 
-        <nav className="container navbar navbar-default navbar-expand navbar-light p-0 mt-0">
-          <div className="navbar-header fadeInDown">
-            <a className="navbar-brand text-white grow-sm pl-4 pr-0 mr-0" href=""><img className="mr-1 img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
-            <span className="ml-2" id="wuwu-text">dj<b>WUWU</b></span></a>     
-          </div>
-          <ul className="header ml-auto pt-0 mb-0">
+        <div className={this.state.isTop ? '' : 'bg-rose'}> 
+        <nav className="container navbar navbar-default navbar-expand navbar-light justify-content-center pl-sm-5 pt-0 pb-0">
+          <ul className="header pt-0 mb-0">
             <li><NavLink className="grow-sm" exact to="/"><span className="nav-text">HOME</span><i className="fas fa-home nav-icon fa-lg"></i></NavLink></li>
-            <li><NavLink className="grow-sm" to="/about"><span className="nav-text">ABOUT</span><i className="fas fa-info-circle nav-icon fa-lg"></i></NavLink></li>
             <li><NavLink className="grow-sm" to="/music"><span className="nav-text">MUSIC</span><i className="fas fa-music nav-icon fa-lg"></i></NavLink></li>
-            <li><NavLink className="grow-sm" to="/photos"><span className="nav-text">PHOTOS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
+            <li>
+            <a className="navbar-brand fadeInDown grow-sm pl-4 pr-1 pt-2 pb-2" href=""><img className="img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
+            </a>     
+          </li>
+            <li><NavLink className="grow-sm" to="/photos"><span className="nav-text">PICS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
             <li><NavLink className="grow-sm" to="/contact"><span className="nav-text">CONTACT</span><i className="fas fa-question-circle nav-icon fa-lg"></i></NavLink></li>
           </ul>
         </nav>
@@ -108,33 +105,29 @@ class Main extends Component {
           </div>
 
           <div className="content">
-            <div className="row">
-             <div className="col-md-8 pr-lg-4 no-scroll-box mb-3"> 
-              
+            <div className="row">    
+
+            <div className="col-md-7 pr-lg-4 no-scroll-box mb-3 order-md-last"> 
               <Route exact path="/" render={()=><Home/>}/>
-              <Route path="/about" render={()=><About />}/>
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
               <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/>
               <Route path="/contact" render={()=><Contact />}/>
               <Route path="/edit" render={()=><Edit />}/>
             </div>
-      
-            <div className="col-md-4 marginr">
+            <div className="col-md-3 marginr offset-md-1 order-md-first">
             <div className="fadeInUp" id="mixcloudprof">
-            <img className="img-fluid mx-auto d-block fadeInUp" alt="profile with blue background" src={Image}/>
             <iframe className="fadeInUp" width="100%" height="90" src="https://www.mixcloud.com/widget/follow/?u=%2Fdjwuwu%2F" frameBorder="0" title="Mixcloud Account"></iframe>
             <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fdjwuwu%2F" frameBorder="0" id="mplayer" title="Mixcloud Player"></iframe>
             </div>
 
             <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3 fadeInUp" frameBorder="0" scrolling="no" title="Insta"></iframe>
-
-            <div className="footer row mb-2 float-right mr-1">
+            <span className="text-white">For bookings: esthrwu@gmail.com </span>
+            <div className="footer row mb-2 ml-1 mt-3">
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>
                 <div className="text-white" id="davidplug">All rights reserved. <br/>© 2018</div>
             </div>
             
             </div>
-
           </div>
 
         </div>

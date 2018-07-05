@@ -45,7 +45,6 @@ if (cluster.isMaster) {
 
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-  app.set("view engine", "ejs");
 
   app.listen(PORT, function () {
     console.error(`Node cluster worker ${process.pid}: listening on port ${PORT}`);
@@ -80,6 +79,43 @@ if (cluster.isMaster) {
       res.send(gigs)
     })
   })
+
+
+app.post('/api/gigs', function(req, res) {
+  nodemailer.createTestAccount((err, account) => {
+    const htmlEmail =  
+   "<h3>Contact Details</h3><ul><li>Name: ${req.body.name}</li><li>Company: ${req.body.company}</li><li>Email: ${req.body.email}</li><li>Phone: ${req.body.phone}</li></ul><h3>Message</h3><p>${req.body.message}</p>";
+
+    let transporter = nodemailer.createTransport({
+            host: 'smtp.google.com',
+            port: 487,
+            secure: false, 
+            auth: {
+                user: 'p7n67tizqldmobej@ethereal.email', 
+                pass: '5m41AzBZghb5UDhJUD' 
+            }
+        });
+
+
+    let mailOptions = {
+        from: '"djwuwu.com', 
+        to: 'bar@example.com, baz@example.com', 
+        subject: 'New Gig Inquiry', 
+        text: req.body.message, 
+        html: htmlEmail 
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+    });
+  })
+})
+
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {

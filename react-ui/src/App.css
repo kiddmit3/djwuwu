@@ -18,7 +18,7 @@ body:before {
   width: 100vw;
   height: 100vh;
   z-index: -10;
-  background: url(./img/max-ostrozhinskiy-218836-unsplash.jpg) no-repeat center center;
+  background: url(./img/IMG_0800-2.jpg) no-repeat 90% 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -81,9 +81,10 @@ ul.header {
 
 ul.header li a {
     color: #FFF;
+    font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    padding: 19px;
+    padding: 42px 20px;
     display: inline-block;
 }
 
@@ -178,19 +179,6 @@ ul.header li a {
     margin-right: 10px;
 }
 
-.navbar .navbar-brand {
-    color: #555;
-    padding-left: 0;
-    font-size: 20px;
-    padding-right: 50px;
-    font-family: 'Raleway', sans-serif;
-}
-
-.navbar .navbar-brand b {
-    font-weight: bold;
-    color: #E75480;
-}
-
 .navbar ul.nav li a:hover,
 .navbar ul.nav li a:focus {
     color: #E75480 !important;
@@ -203,35 +191,8 @@ ul.header li a {
     background: transparent !important;
 }
 
-.navbar .nav-item i {
-    font-size: 18px;
-}
-
-.navbar .dropdown-item i {
-    font-size: 16px;
-    min-width: 22px;
-}
-
 .navbar .nav-item.open>a {
     background: none !important;
-}
-
-.navbar .dropdown-menu {
-    border-radius: 1px;
-    border-color: #e5e5e5;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-}
-
-.navbar .dropdown-menu li a {
-    color: #777;
-    padding: 8px 20px;
-    line-height: normal;
-}
-
-.navbar .navbar-form {
-    margin-right: 0;
-    margin-left: 0;
-    border: 0;
 }
 
 #mplayer {
@@ -291,7 +252,7 @@ ul.header li a {
         display: none;
     }
     ul.header li a {
-        padding: 40px 15px;
+        padding: 50px 15px;
     }
 
     .header {
@@ -313,21 +274,19 @@ ul.header li a {
 }
 
 @media (max-width: 576px) {
+    ul.header li a {
+
+        font-size: 16px;
+        padding: 50px 10px;
+    }
+
     .content {
         padding-left: 0px;
         padding-right: 35px;
     }
 
-    .padding-right {
-        padding-right: 50px;
-    }
-
     .header {
         margin-right: 2px;
-    }
-
-    .bg-rose {
-        padding-right: 50px;
     }
 
 }
@@ -345,7 +304,9 @@ ul.header li a {
 @media (max-width: 394px) {
 
     ul.header li a {
-        padding: 40px 10px;
+
+        font-size: 16px;
+        padding: 50px 8px;
     }
 }
 
