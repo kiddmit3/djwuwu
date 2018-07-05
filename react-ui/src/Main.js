@@ -80,14 +80,14 @@ class Main extends Component {
         <div className={this.state.isTop ? '' : 'bg-rose'}> 
         <nav className="container navbar navbar-default navbar-expand navbar-light justify-content-center pl-sm-5 pt-0 pb-0">
           <ul className="header pt-0 mb-0">
-            <li><NavLink className="grow-sm" exact to="/"><span className="nav-text">HOME</span><i className="fas fa-home nav-icon fa-lg"></i></NavLink></li>
-            <li><NavLink className="grow-sm" to="/music"><span className="nav-text">MUSIC</span><i className="fas fa-music nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm inactive" activeClassName="active" exact to="/"><span className="nav-text">HOME</span><i className="fas fa-home nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm inactive" activeClassName="active" to="/music"><span className="nav-text">MUSIC</span><i className="fas fa-music nav-icon fa-lg"></i></NavLink></li>
             <li>
             <a className="navbar-brand fadeInDown grow-sm pl-4 pr-1 pt-2 pb-2" href=""><img className="img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
             </a>     
           </li>
-            <li><NavLink className="grow-sm" to="/photos"><span className="nav-text">PICS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
-            <li><NavLink className="grow-sm" to="/contact"><span className="nav-text">CONTACT</span><i className="fas fa-question-circle nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm inactive" activeClassName="active" to="/photos"><span className="nav-text">PICS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm inactive" activeClassName="active" to="/contact"><span className="nav-text">CONTACT</span><i className="fas fa-question-circle nav-icon fa-lg"></i></NavLink></li>
           </ul>
         </nav>
         </div>
@@ -106,7 +106,6 @@ class Main extends Component {
 
           <div className="content">
             <div className="row">    
-
             <div className="col-md-7 pr-lg-4 no-scroll-box mb-3 order-md-last"> 
               <Route exact path="/" render={()=><Home/>}/>
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
@@ -121,7 +120,7 @@ class Main extends Component {
             </div>
 
             <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3 fadeInUp" frameBorder="0" scrolling="no" title="Insta"></iframe>
-            <span className="text-white">For bookings: esthrwu@gmail.com </span>
+            <span style={{color: '#E75480'}}>For bookings: </span><span className="text-white">esthrwu@gmail.com </span>
             <div className="footer row mb-2 ml-1 mt-3">
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>
                 <div className="text-white" id="davidplug">All rights reserved. <br/>© 2018</div>

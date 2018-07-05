@@ -138,8 +138,12 @@ ul.header li a {
     margin-bottom: 10px;
 }
 
-.active {
-    background-color: #E75480;
+.inactive {
+    color: white;
+}
+
+.active .nav-text {
+    color: #E75480;
 }
 
 
@@ -177,22 +181,6 @@ ul.header li a {
     margin: -8px 0;
     float: left;
     margin-right: 10px;
-}
-
-.navbar ul.nav li a:hover,
-.navbar ul.nav li a:focus {
-    color: #E75480 !important;
-}
-
-.navbar ul.nav li.active a,
-.navbar ul.nav li.active a:hover,
-.navbar ul.nav li.active a:focus {
-    color: #E75480 !important;
-    background: transparent !important;
-}
-
-.navbar .nav-item.open>a {
-    background: none !important;
 }
 
 #mplayer {
