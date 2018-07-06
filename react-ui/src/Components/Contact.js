@@ -41,11 +41,11 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="card p-4 mb-3 fadeInUp">
-      <img className="img-fluid mx-auto d-block" src={Image} alt="Los Angeles"/>
-      <div className="text-right"><em>Based in Los Angeles, CA </em></div>
+      <div className="card mb-3 fadeInUp">
+      <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="Los Angeles"/>
+      <div className="text-right mr-2 mt-2"><em>Based in Los Angeles, CA </em></div>
         <form className="p-3 mt-3" onSubmit={this.handleSubmit}>
-        <div className="row">
+        <div className="row p-4">
           <div className="col-md-6 form-line">
               <div className="form-group">
                 <label for="exampleInputUsername">Your Name</label>
