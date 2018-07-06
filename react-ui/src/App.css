@@ -146,6 +146,10 @@ ul.header li a {
     color: #E75480;
 }
 
+.active .nav-icon {
+    color: #E75480;
+}
+
 
 .form-inline {
     display: inline-block;
