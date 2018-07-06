@@ -44,7 +44,7 @@ class Contact extends Component {
       <div className="card mb-3 fadeInUp">
       <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="Los Angeles"/>
       <div className="text-right mr-2 mt-2"><em>Based in Los Angeles, CA </em></div>
-        <form className="p-3 mt-3" onSubmit={this.handleSubmit}>
+        <form className="p-3" onSubmit={this.handleSubmit}>
         <div className="row p-4">
           <div className="col-md-6 form-line">
               <div className="form-group">
