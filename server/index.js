@@ -99,7 +99,7 @@ app.post('/api/gigs', function(req, res) {
 
     let mailOptions = {
         from: '"djwuwu.com', 
-        to: 'bar@example.com, baz@example.com', 
+        to: 'info@djwuwu.com', 
         subject: 'New Gig Inquiry', 
         text: req.body.message, 
         html: htmlEmail 

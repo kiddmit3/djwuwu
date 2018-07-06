@@ -120,7 +120,7 @@ class Main extends Component {
             </div>
 
             <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3 fadeInUp" frameBorder="0" scrolling="no" title="Insta"></iframe>
-            <span style={{color: '#E75480'}}>For bookings: </span><span className="text-white">esthrwu@gmail.com </span>
+            <span style={{color: '#E75480'}}>For bookings: </span><span className="text-white">info@djwuwu.com</span>
             <div className="footer row mb-2 ml-1 mt-3">
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>
                 <div className="text-white" id="davidplug">All rights reserved. <br/>© 2018</div>
