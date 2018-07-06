@@ -3,17 +3,18 @@ DJ webpage using react-router and bootstrap 4 on the frontend and express, node.
 
 ## Production
 [djwuwu.com](https://djwuwu.com)
-Responsive homepage
+
+Responsive design:
 <p align="center"><img src="./react-ui/public/home.png" width="600" /></p>
 
-Add and Delete Gigs
+Add and Delete Gigs:
 <p align="center"><img src="./react-ui/public/edit.png" width="600" /></p>
 
-Contact using nodemailer.js
+Contact using nodemailer.js:
 <p align="center"><img src="./react-ui/public/contact.png" width="600" /></p>
 
 ## Mobile design
-<p align="center"><img src="./react-ui/public/mobile.png" width="600" /></p>
+<p align="center"><img src="./react-ui/public/mobile.png" width="300" /></p>
 
 ## Built With
 * [React](https://github.com/facebook/react)
