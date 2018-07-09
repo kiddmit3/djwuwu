@@ -81,10 +81,10 @@ class Main extends Component {
         <nav className="container navbar navbar-default navbar-expand navbar-light justify-content-center pl-sm-5 pt-0 pb-0">
           <ul className="header pt-0 mb-0">
             <li><NavLink className="grow-sm inactive" activeClassName="active" exact to="/"><span className="nav-text">HOME</span><i className="fas fa-home nav-icon fa-lg"></i></NavLink></li>
-            <li><NavLink className="grow-sm inactive" activeClassName="active" to="/music"><span className="nav-text">MUSIC</span><i className="fas fa-music nav-icon fa-lg"></i></NavLink></li>
+            <li><NavLink className="grow-sm inactive" activeClassName="active" to="/music"><span className="nav-text">ABOUT</span><i className="fas fa-music nav-icon fa-lg"></i></NavLink></li>
             <li>
-            <a className="navbar-brand fadeInDown grow-sm pl-4 pr-1 pt-2 pb-2" href=""><img className="img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
-            </a>     
+            <div className="navbar-brand fadeInDown grow-sm pl-4 pr-1 pt-2 pb-2" href=""><img className="img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
+            </div>     
           </li>
             <li><NavLink className="grow-sm inactive" activeClassName="active" to="/photos"><span className="nav-text">PICS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
             <li><NavLink className="grow-sm inactive" activeClassName="active" to="/contact"><span className="nav-text">CONTACT</span><i className="fas fa-question-circle nav-icon fa-lg"></i></NavLink></li>
