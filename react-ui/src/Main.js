@@ -100,6 +100,9 @@ class Main extends Component {
               <li className=""><a href="https://www.instagram.com/niyun_wu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
               <li className=""><a href="https://soundcloud.com/djwuwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-soundcloud"></i></a></li>
               <li className=""><a href="https://www.mixcloud.com/djwuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-mixcloud"></i></a></li>
+              <li className=""><a href="https://www.linkedin.com/in/estherniyunwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+
+              
               <li className=""><a href="mailto:info@djwuwu.com" className="nav-link grow"><i className="far fa-envelope"></i></a></li>
             </ul>
           </div>
