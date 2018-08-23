@@ -76,15 +76,24 @@ class Music extends Component {
         <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/>
         <div className="p-3">
         <h2 className="mb-3">Esther Wu</h2>
-        <p>"WuWu" is Californian native that spent some time as an Economics Major at the Boston University. Having moved 
-        back to LA in 2015, she works as an IT Business Analyst at SONY ENTERTAINMENT during the day, designing applications for their business units. 
-        </p>
-        <p>
-        Growing up, she always had a strong passion in being able to help others through technology. However, more recently she evolved that passion 
-        into using music to share and make others happy. She has DJ’d at various venues such as The Other Door and Tokyo Beat. 
-        If there were a genre of music that can describe her, it's chill house, melodic house, and future bass tracks - drawing inspiration
-        from producers with the likes of Kaskade, Cheat Codes, Robotaki, Prince Fox, and Felix Cartal.</p>
-        </div>
+			<p>“wuwu" is an LA native who previously dabbled as an Economics Major at Boston University. 
+			After her return to LA in September 2015, she currently works as an IT Business Analyst at SONY 
+			ENTERTAINMENT, designing applications for their business units. Previously, she was a Business 
+			Analyst at FOX. 
+			</p>
+			<p>Growing up, she always had a strong passion in being able to help others through technology. 
+			However, more recently that passion has evolved into using music to share with and make others 
+			happy. She has DJ’d at various venues including Bardot, Blind Barber, and Sunset Marquis. 
+			</p>
+			<p>“wuwu” also takes an interest in curating lineups at her various residencies such as Broadway Bar 
+			and Blind Barber. Her focus in DJing and event curation has further expanded into DJing for fitness, 
+			multicultural networking, and charity events rather than the standard bar/club scene. 
+			</p>
+			<p>If there were a genre of music that can describe her, it's chill house, melodic house, and future 
+			bass tracks - drawing inspiration from producers with the likes of Kaskade, Cheat Codes, Robotaki, 
+			Prince Fox, and Felix Cartal.
+			</p>        
+		</div>
         <div className="pb-2"><i className="fas fa-info-circle float-right fa-lg"></i></div>
       </div>
 
