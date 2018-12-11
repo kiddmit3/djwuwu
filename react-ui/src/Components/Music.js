@@ -70,16 +70,13 @@ class Music extends Component {
   render() {
     return (
       <div className="mb-3 fadeInUp">
-
       <div className="card bg-white mb-3">
-
         <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/>
         <div className="p-3">
         <h2 className="mb-3">Esther Wu</h2>
 			<p>“wuwu" is an LA native who previously dabbled as an Economics Major at Boston University. 
 			After her return to LA in September 2015, she currently works as an IT Business Analyst at SONY 
-			ENTERTAINMENT, designing applications for their business units. Previously, she was a Business 
-			Analyst at FOX. 
+			ENTERTAINMENT. Previously, she was a Business Analyst at FOX. 
 			</p>
 			<p>Growing up, she always had a strong passion in being able to help others through technology. 
 			However, more recently that passion has evolved into using music to share with and make others 
