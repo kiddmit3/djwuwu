@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import AddGig from "./AddGig";
 
- 
 class Home extends Component {
 constructor() {
     super();
@@ -40,7 +39,6 @@ handleDeleteGig(_id){
     gigs.splice(index,1);
     this.setState({gigs:gigs})
   }
-
 
 componentWillMount() {
     this.getGigs();

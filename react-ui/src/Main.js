@@ -6,12 +6,13 @@ import {
 } from "react-router-dom";
 import Home from "./Components/Home";
 import Music from "./Components/Music";
-import Photos from "./Components/Photos";
+// import Photos from "./Components/Photos";
 import Contact from "./Components/Contact";
 import Edit from "./Components/Edit";
 import Dav from "./img/dav.png";
 import brandlogo from "./img/djwuwu.png";
 import ScrollToTop from 'react-router-scroll-top';
+import epk from './pdf/WUWU_EPK.pdf'
 // import uuid from "uuid";
 
 class Main extends Component {
@@ -86,7 +87,7 @@ class Main extends Component {
             <div className="navbar-brand fadeInDown grow-sm pl-4 pr-1 pt-2 pb-2" href=""><img className="img-fluid" id="brandlogo" alt="logo" src={brandlogo}/>
             </div>     
           </li>
-            <li><NavLink className="grow-sm inactive" activeClassName="active" to="/photos"><span className="nav-text">PICS</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></NavLink></li>
+            <li><a className="grow-sm inactive" href={epk} target="_blank"><span className="nav-text text-white">EPK</span><i className="fas fa-camera-retro nav-icon fa-lg"></i></a></li>
             <li><NavLink className="grow-sm inactive" activeClassName="active" to="/contact"><span className="nav-text">CONTACT</span><i className="fas fa-question-circle nav-icon fa-lg"></i></NavLink></li>
           </ul>
         </nav>
@@ -112,7 +113,7 @@ class Main extends Component {
             <div className="col-md-7 pr-lg-4 no-scroll-box mb-3 order-md-last"> 
               <Route exact path="/" render={()=><Home/>}/>
               <Route path="/music" render={()=><Music venues={this.state.venues}/>}/>
-              <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/>
+              {/* <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/> */}
               <Route path="/contact" render={()=><Contact />}/>
               <Route path="/edit" render={()=><Edit />}/>
             </div>
@@ -123,7 +124,7 @@ class Main extends Component {
             </div>
 
             <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3 fadeInUp" frameBorder="0" scrolling="no" title="Insta"></iframe>
-            <span style={{color: '#E75480'}}>For bookings: </span><span className="text-white">info@djwuwu.com</span>
+            <span style={{color: '#E75480'}}>For bookings: </span><a href="mailto: info@djwuwu.com"><span className="text-white">info@djwuwu.com</span></a>
             <div className="footer row mb-2 ml-1 mt-3">
                 <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a>
                 <div className="text-white" id="davidplug">All rights reserved. <br/>© 2018</div>
