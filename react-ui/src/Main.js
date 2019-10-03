@@ -97,7 +97,7 @@ class Main extends Component {
         <div className="container pr-0">
         <div className="social-sidebar bg-white pr-1">
             <ul className="navbar-nav">
-              <li className=""><a href="https://www.facebook.com/niyunwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
+              <li className=""><a href="https://www.facebook.com/djwuwu.official" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
               <li className=""><a href="https://www.instagram.com/niyun_wu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
               <li className=""><a href="https://soundcloud.com/djwuwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-soundcloud"></i></a></li>
               <li className=""><a href="https://www.mixcloud.com/djwuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-mixcloud"></i></a></li>
