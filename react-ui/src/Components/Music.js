@@ -47,84 +47,73 @@ import Image from "../img/geert-pieters-684286-unsplash.jpg";
 //   }
 // ]
 
+import epk from '../pdf/WUWU_EPK.pdf'
 
 // <MusicPlayer playlist={playlist} />
 
 function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
 }
 
 const images = importAll(require.context('../img/venues/', false, /\.(png|jpe?g|svg)$/));
 
 let venues = [];
 for (var key in images) {
-  var obj = {src: images[key],
-    alt: key.slice(0, -4)};
-  venues.push(obj);
+    var obj = {
+        src: images[key],
+        alt: key.slice(0, -4)
+    };
+    venues.push(obj);
 }
 
 
 class Music extends Component {
-  render() {
-    return (
-      <div className="mb-3 fadeInUp">
-      <div className="card bg-white mb-3">
-        <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/>
-        <div className="p-3">
-        <h2 className="mb-3">Esther Wu</h2>
-			<p>“wuwu" is an LA native who previously dabbled as an Economics Major at Boston University. 
-			After her return to LA in September 2015, she currently works as an IT Business Analyst at SONY 
-			ENTERTAINMENT. Previously, she was a Business Analyst at FOX. 
-			</p>
-			<p>Growing up, she always had a strong passion in being able to help others through technology. 
-			However, more recently that passion has evolved into using music to share with and make others 
-			happy. She has DJ’d at various venues including Bardot, Blind Barber, and Sunset Marquis. 
-			</p>
-			<p>“wuwu” also takes an interest in curating lineups at her various residencies such as Broadway Bar 
-			and Blind Barber. Her focus in DJing and event curation has further expanded into DJing for fitness, 
-			multicultural networking, and charity events rather than the standard bar/club scene. 
-			</p>
-			<p>If there were a genre of music that can describe her, it's chill house, melodic house, and future 
-			bass tracks - drawing inspiration from producers with the likes of Kaskade, Cheat Codes, Robotaki, 
-			Prince Fox, and Felix Cartal.
-			</p>        
-		</div>
-        <div className="pb-2"><i className="fas fa-info-circle float-right fa-lg"></i></div>
-      </div>
-
-      <div className="card p-4">
-        <div className="float-right mb-3"><i className="fas fa-music fa-lg float-right"></i></div>
-        <iframe title="SoundCloud" width="100%" height="450" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/316497497&color=%23ba489a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>        </div>
-        
-        <div className="card p-4 mt-4">
-        <h4>Venues</h4>
-
-      <div className="card-columns">
-
-{venues.map(function(imageProps) {
-  return (
-    <div className="mb-3 d-inline-block" key={ imageProps.src }>
-      <img className="img-fluid grow-xs" src={ imageProps.src } alt={ imageProps.alt } />
-      { imageProps.alt }
+    render() {
+        return (
+      <div className="">
+      <div className="card mb-3 shadow-none border-0" style={{background: 'none', fontSize: '1rem', fontWeight: '800', color: '#E75480',lineHeight: '1'}}>
+        {/* <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/> */}
+      <div className="">
+      <h1 className="text-white">Ester Wu
+        <a className="float-right text-white" href={epk} target="_blank" style={{fontSize: '2rem'}}>
+        <i className="far fa-file fa-sm"></i> epk</a>
+      </h1>
+      <p>Working at the intersection of technology and entertainment, “wuwu” takes an interest in curating lineups at residencies accross Los Angeles, CA. From Broadway Bar 
+      to Blind Barber, her focus in DJing and event curation expands into djing for fitness, 
+      multicultural networking, and charity events. Not just the typical bar/club scene. 
+      </p>
+      <p>If there were a genre of music that can describe her, it's chill house, melodic house, and future 
+      bass tracks - drawing inspiration from producers with the likes of Kaskade, Cheat Codes, Robotaki, 
+      Prince Fox, and Felix Cartal.
+      </p>        
     </div>
-  );
-})}
-
-
-
 
       </div>
 
 
-
-
-        </div>
+        
+      <div className="card mt-4 shadow-none border-0" style={{background: 'none'}}>
+      <div className="card-columns">
+      {venues.map(function(imageProps) {
+        return (
+          <div className="mb-3 d-inline-block text-white" key={ imageProps.src } style={{fontSize: '1rem', fontWeight: '800'}}>
+            <img className="img-fluid grow-xs" src={ imageProps.src } alt={ imageProps.alt } />
+            { imageProps.alt }
+          </div>
+        );
+      })}
+      </div>
+      </div>
+      <div className="card p-4" >
+        <div className="float-right mb-3"><i className="fas fa-music fa-lg float-right"></i></div>
+        <iframe title="SoundCloud" width="100%" height="350" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/316497497&color=%23ba489a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>        
+      </div>
 
       </div>
-    );
-  }
+        );
+    }
 }
- 
+
 export default Music;
