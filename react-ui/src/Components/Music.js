@@ -95,22 +95,23 @@ class Music extends Component {
 
         
       <div className="card mt-4 shadow-none border-0" style={{background: 'none'}}>
-      <div className="card-columns">
+      <div className='row mt-3'>
       {venues.map(function(imageProps) {
         return (
-          <div className="mb-3 d-inline-block text-white" key={ imageProps.src } style={{fontSize: '1rem', fontWeight: '800'}}>
-            <img className="img-fluid grow-xs" src={ imageProps.src } alt={ imageProps.alt } />
+          <div className="mb-3 d-inline-block text-white col-3 d-inline-block px-1 mx-0" key={ imageProps.src } style={{fontSize: '1rem', fontWeight: '800'}}>
+            <img className="img-fluid grow-xs" src={ imageProps.src } alt={ imageProps.alt } style={{height: '120px'}}/>
             { imageProps.alt }
           </div>
         );
       })}
       </div>
       </div>
+      {/*
       <div className="card p-4" >
         <div className="float-right mb-3"><i className="fas fa-music fa-lg float-right"></i></div>
         <iframe title="SoundCloud" width="100%" height="350" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/316497497&color=%23ba489a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>        
       </div>
-
+      */}
       </div>
         );
     }

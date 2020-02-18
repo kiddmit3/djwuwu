@@ -99,7 +99,7 @@ class Main extends Component {
         </div>
 
 
-        <div className="container pr-0 mx-1" style={{maxWidth: '1340px', marginTop: '5vh' }}>
+        <div className="container pr-0" style={{marginTop: '5vh' }}>
         <div className="social-sidebar bg-white pr-1">
             <ul className="navbar-nav">
               <li className=""><a href="https://www.facebook.com/djwuwu.official" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
@@ -115,14 +115,14 @@ class Main extends Component {
 
           <div className="content">
             <div className="row">    
-            <div className="col-md-8 pr-lg-4 no-scroll-box mb-3 order-md-last"> 
+            <div className="col-md-7 pr-lg-4 no-scroll-box mb-3 px-0"> 
               <Route exact path="/home" render={()=><Home/>}/>
               <Route path="/" render={()=><Music venues={this.state.venues}/>}/>
               {/* <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/> */}
               <Route path="/contact" render={()=><Contact />}/>
               <Route path="/edit" render={()=><Edit />}/>
             </div>
-            <div className="col-md-3 offset-md-1 order-md-first text-center mx-auto">
+            <div className="col-md-4 offset-md-1 order-md-first text-center mx-auto mr-0">
 
                 <div className="" id="mixcloudprof">
                 <iframe className="" width="100%" height="90" src="https://www.mixcloud.com/widget/follow/?u=%2Fdjwuwu%2F" frameBorder="0" title="Mixcloud Account"></iframe>
