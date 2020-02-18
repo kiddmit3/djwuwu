@@ -102,7 +102,7 @@ class Main extends Component {
         <div className="container pr-0 pt-5" style={{marginTop: '5vh' }}>
         <div className="social-sidebar bg-white pr-1">
             <ul className="navbar-nav">
-              <li className=""><a href="https://www.facebook.com/ddj.wuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
+              <li className=""><a href="https://www.instagram.com/dj.wuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
               <li className=""><a href="https://soundcloud.com/djwuwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-soundcloud"></i></a></li>
               <li className=""><a href="https://www.mixcloud.com/djwuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-mixcloud"></i></a></li>
               <li className=""><a href="https://www.linkedin.com/in/estherniyunwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
