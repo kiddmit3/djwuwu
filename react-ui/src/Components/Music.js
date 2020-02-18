@@ -73,11 +73,11 @@ class Music extends Component {
     render() {
         return (
       <div className="">
-      <div className="card mb-3 shadow-none border-0" style={{background: 'none', fontSize: '1rem', fontWeight: '800', color: '#E75480',lineHeight: '1'}}>
+      <div className="card mb-3 shadow-none border-0" style={{background: 'none', fontSize: '1.2rem', fontWeight: '600', color: '#E75480', lineHeight: '1.2'}}>
         {/* <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/> */}
       <div className="">
       <h1 className="text-white">Esther Wu
-        <a className="float-right text-white" href={epk} target="_blank" style={{fontSize: '2rem'}}>
+        <a className="float-right text-white" href={epk} target="_blank" style={{fontSize: '1.5rem'}}>
         <i className="far fa-file fa-sm"></i> epk</a>
       </h1>
       <p>Working at the intersection of technology and entertainment, “wuwu” takes an interest in curating lineups at residencies accross Los Angeles, CA. From Broadway Bar 

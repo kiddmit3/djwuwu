@@ -112,7 +112,7 @@ class Main extends Component {
             </ul>
           </div>
 
-          <div className="content px-5 px-sm-0">
+          <div className="content pl-2 pr-5 px-sm-0">
             <div className="row">    
             <div className="col-lg-7 no-scroll-box mb-3"> 
               <Route exact path="/home" render={()=><Home/>}/>
