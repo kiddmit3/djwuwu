@@ -76,23 +76,20 @@ class Music extends Component {
       <div className="card mb-3 shadow-none border-0" style={{background: 'none', fontSize: '1rem', fontWeight: '800', color: '#E75480',lineHeight: '1'}}>
         {/* <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/> */}
       <div className="">
-      <h1 className="text-white">Ester Wu
+      <h1 className="text-white">Esther Wu
         <a className="float-right text-white" href={epk} target="_blank" style={{fontSize: '2rem'}}>
         <i className="far fa-file fa-sm"></i> epk</a>
       </h1>
       <p>Working at the intersection of technology and entertainment, “wuwu” takes an interest in curating lineups at residencies accross Los Angeles, CA. From Broadway Bar 
       to Blind Barber, her focus in DJing and event curation expands into djing for fitness, 
-      multicultural networking, and charity events. Not just the typical bar/club scene. 
+      multicultural networking, and charity events - not just the typical bar/club scene. 
       </p>
       <p>If there were a genre of music that can describe her, it's chill house, melodic house, and future 
       bass tracks - drawing inspiration from producers with the likes of Kaskade, Cheat Codes, Robotaki, 
       Prince Fox, and Felix Cartal.
       </p>        
-    </div>
-
       </div>
-
-
+      </div>
         
       <div className="card mt-4 shadow-none border-0" style={{background: 'none'}}>
       <div className='row mt-3'>

@@ -99,11 +99,10 @@ class Main extends Component {
         </div>
 
 
-        <div className="container pr-0" style={{marginTop: '5vh' }}>
+        <div className="container pr-0 pt-5" style={{marginTop: '5vh' }}>
         <div className="social-sidebar bg-white pr-1">
             <ul className="navbar-nav">
-              <li className=""><a href="https://www.facebook.com/djwuwu.official" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
-              <li className=""><a href="https://www.instagram.com/niyun_wu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
+              <li className=""><a href="https://www.facebook.com/ddj.wuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
               <li className=""><a href="https://soundcloud.com/djwuwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-soundcloud"></i></a></li>
               <li className=""><a href="https://www.mixcloud.com/djwuwu/" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i className="fab fa-mixcloud"></i></a></li>
               <li className=""><a href="https://www.linkedin.com/in/estherniyunwu" className="nav-link grow" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
@@ -113,16 +112,16 @@ class Main extends Component {
             </ul>
           </div>
 
-          <div className="content">
+          <div className="content px-5 px-sm-0">
             <div className="row">    
-            <div className="col-md-7 pr-lg-4 no-scroll-box mb-3 px-0"> 
+            <div className="col-lg-7 no-scroll-box mb-3"> 
               <Route exact path="/home" render={()=><Home/>}/>
               <Route path="/" render={()=><Music venues={this.state.venues}/>}/>
               {/* <Route path="/photos" render={()=><Photos photos={this.state.photos}/>}/> */}
               <Route path="/contact" render={()=><Contact />}/>
               <Route path="/edit" render={()=><Edit />}/>
             </div>
-            <div className="col-md-4 offset-md-1 order-md-first text-center mx-auto mr-0">
+            <div className="col-lg-3 offset-lg-2 order-lg-first text-center ml-0 mr-3">
 
                 <div className="" id="mixcloudprof">
                 <iframe className="" width="100%" height="90" src="https://www.mixcloud.com/widget/follow/?u=%2Fdjwuwu%2F" frameBorder="0" title="Mixcloud Account"></iframe>
