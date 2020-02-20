@@ -127,15 +127,19 @@ class Main extends Component {
                 <iframe className="" width="100%" height="90" src="https://www.mixcloud.com/widget/follow/?u=%2Fdjwuwu%2F" frameBorder="0" title="Mixcloud Account"></iframe>
                 <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=%2Fdjwuwu%2F" frameBorder="0" id="mplayer" title="Mixcloud Player"></iframe>
                 </div>
-
                 <iframe src="https://snapwidget.com/embed/564972" className="snapwidget-widget mt-3" frameBorder="0" scrolling="no" title="Insta"></iframe>
+                <div id="info">
                 <img className="img-fluid mx-auto" id="brandlogo" alt="logo" src={brandlogo}/><br/>
                 <span style={{color: '#E75480'}}>Email </span>
                 <a href="mailto: info@djwuwu.com"><span className="text-white">info@djwuwu.com</span></a>
+                
                 <div className="footer row mb-2 text-center mt-3">
                     {/*  <a href="https://kiddmit3.github.io"><img className="img-fluid rounded-circle grow-sm" src={Dav} alt="David Lac, Developer"/></a> */}
                     <div className="text-white w-100 text-center" id="davidplug">All rights reserved. <br/>© 2020  djWUWU</div>
                 </div>
+                </div>
+
+
             
             </div>
           </div>

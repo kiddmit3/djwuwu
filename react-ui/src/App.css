@@ -92,8 +92,9 @@ ul.header li a {
     background-color: rgba(230, 85, 120, 0.4);
 }
 
-.brandlogo {
-    height: 40px;
+#info {
+    position: relative;
+    bottom: 50px;
 }
 
 .grow {
@@ -212,6 +213,10 @@ ul.header li a {
 @media (max-width: 991px) {
     body {
         padding-bottom: 256px
+    }
+    #info {
+        position: relative;
+        top: 50px;
     }
     .form-inline {
         display: block;
