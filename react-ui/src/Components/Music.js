@@ -72,11 +72,11 @@ for (var key in images) {
 class Music extends Component {
     render() {
         return (
-      <div className="">
-      <div className="card mb-3 shadow-none border-0" style={{background: 'none', fontSize: '1.2rem', fontWeight: '600', color: '#E75480', lineHeight: '1.2'}}>
+      <div className="p-0">
+      <div className="card mb-3 shadow-none border-0 p-0" style={{background: 'none', fontSize: '1.2rem', fontWeight: '600', color: '#E75480', lineHeight: '1.2'}}>
         {/* <img className="img-fluid mx-auto d-block card-img-top" src={Image} alt="disc jockey"/> */}
-      <div className="">
-      <h1 className="text-white">Esther Wu
+      <div className="p-3" style={{backgroundColor: 'rgb(255,255,255, 0.5)'}}>
+      <h1 style={{color: '#D59AB6'}}>Esther Wu
         <a className="float-right text-white" href={epk} target="_blank" style={{fontSize: '1.5rem'}}>
         <i className="far fa-file fa-sm"></i> epk</a>
       </h1>
@@ -90,9 +90,10 @@ class Music extends Component {
       </p>        
       </div>
       </div>
-        
+      {/*  
       <div className="card mt-4 shadow-none border-0" style={{background: 'none'}}>
       <div className='row mt-3'>
+
       {venues.map(function(imageProps) {
         return (
           <div className="mb-3 d-inline-block text-white col-3 d-inline-block px-1 mx-0" key={ imageProps.src } style={{fontSize: '1rem', fontWeight: '800'}}>
