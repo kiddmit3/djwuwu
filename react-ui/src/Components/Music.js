@@ -90,15 +90,14 @@ class Music extends Component {
       </p>        
       </div>
       </div>
-      {/*  
-      <div className="card mt-4 shadow-none border-0" style={{background: 'none'}}>
+       
+      <div className="card mt-4 p-0 shadow-none border-0" style={{background: 'none'}}>
       <div className='row mt-3'>
 
       {venues.map(function(imageProps) {
         return (
           <div className="mb-3 d-inline-block text-white col-3 d-inline-block px-1 mx-0" key={ imageProps.src } style={{fontSize: '1rem', fontWeight: '800'}}>
-            <img className="img-fluid grow-xs" src={ imageProps.src } alt={ imageProps.alt } style={{height: '120px'}}/>
-            { imageProps.alt }
+            <img className="img-fluid grow-xs" src={ imageProps.src } alt={ imageProps.alt } style={{height: '120px'}} title={ imageProps.alt }/>
           </div>
         );
       })}
